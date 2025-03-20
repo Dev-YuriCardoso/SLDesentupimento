@@ -87,7 +87,7 @@
 <div class="slider-area">
     <!-- Mobile Menu -->
     <div class="slider-active">
-        <div class="single-slider slider-height d-flex align-items-center" data-background="img/hero05.png" id="slider-images">
+        <div class="single-slider slider-height d-flex align-items-center" data-background="img/hero05.png" id="slider-image">
             <div class="container">
                 <div class="row">
                     <div class="col-xl-5 col-lg-8 col-md-10">
@@ -110,21 +110,40 @@
 
 <style>
 /* Oculta a imagem e deixa o fundo azul escuro no mobile */
-@media (max-width: 768px) {
-    #slider-image {
-        background: #ffffff !important; /* Azul escuro */
-        
-    }
-    .slider-area .hero__caption h1 {
-    color: #28395a; /* Cor azul para o texto */
-    text-align: center;
-    }
-    .paragrafo-hero{
-        text-align: center;
-        color:#28395a;
-    }
+
+#slider-image {
+    background-image: url('img/hero05.png');
+    background-size: cover;
+    background-position: center;
 }
 
+/* Imagem para mobile */
+@media (max-width: 768px) {
+    #slider-image {
+        background-image: url('img/hero06.png')!important; /* Substitua pelo caminho da imagem mobile */
+    }
+
+    .slider-area .hero__caption h1 {
+    color: #ffffff; /* Cor azul para o texto */
+    text-align: center;
+    }
+}
+    .single-slider{
+        
+    }
+    
+    .slider-area .hero__caption h1,
+.paragrafo-hero {
+    color: #28395a; /* Azul */
+    text-align: center;
+}
+
+/* Alteração para mobile */
+@media (max-width: 768px) {
+    .slider-area .hero__caption h1,
+    .paragrafo-hero {
+        color: white; /* Branco */
+    }
 }
 
 
