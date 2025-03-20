@@ -595,13 +595,53 @@
       </div>
     </div>
   </div>
+  <!-- Estilos customizados para modal fullscreen no Bootstrap 4 -->
+  <style>
+    .modal-fullscreen {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    .modal-fullscreen .modal-content {
+      height: 100%;
+      border: none;
+      border-radius: 0;
+      background: transparent;
+      position: relative;
+    }
+    .modal-fullscreen .modal-body {
+      padding: 0;
+      height: 100%;
+    }
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      z-index: 9999;
+      font-size: 2rem;
+      color: #fff;
+      background: rgba(0, 0, 0, 0.5);
+      border: none;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      line-height: 36px;
+      text-align: center;
+      cursor: pointer;
+    }
+  </style>
   
   <!-- Modal 1 -->
   <div class="modal fade" id="videoModal1" tabindex="-1" role="dialog" aria-labelledby="videoModalLabel1" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-video" role="document">
-      <div class="modal-content" style="background: transparent; border: none;">
+    <div class="modal-dialog modal-dialog-centered modal-fullscreen" role="document">
+      <div class="modal-content">
+        <!-- Botão X para fechar -->
+        <button type="button" class="close-btn" data-dismiss="modal" aria-label="Fechar">
+          &times;
+        </button>
         <div class="modal-body p-0">
-          <video id="videoPlayer1" width="100%" height="400" controls autoplay>
+          <video id="videoPlayer1" width="100%" height="100%" controls autoplay>
             <source src="assets/videos/01a.mp4" type="video/mp4">
             Seu navegador não suporta o elemento de vídeo.
           </video>
@@ -612,10 +652,14 @@
   
   <!-- Modal 2 -->
   <div class="modal fade" id="videoModal2" tabindex="-1" role="dialog" aria-labelledby="videoModalLabel2" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-video" role="document">
-      <div class="modal-content" style="background: transparent; border: none;">
+    <div class="modal-dialog modal-dialog-centered modal-fullscreen" role="document">
+      <div class="modal-content">
+        <!-- Botão X para fechar -->
+        <button type="button" class="close-btn" data-dismiss="modal" aria-label="Fechar">
+          &times;
+        </button>
         <div class="modal-body p-0">
-          <video id="videoPlayer2" width="100%" height="400" controls autoplay>
+          <video id="videoPlayer2" width="100%" height="100%" controls autoplay>
             <source src="assets/videos/tanque.mp4" type="video/mp4">
             Seu navegador não suporta o elemento de vídeo.
           </video>
@@ -626,10 +670,14 @@
   
   <!-- Modal 3 -->
   <div class="modal fade" id="videoModal3" tabindex="-1" role="dialog" aria-labelledby="videoModalLabel3" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-video" role="document">
-      <div class="modal-content" style="background: transparent; border: none;">
+    <div class="modal-dialog modal-dialog-centered modal-fullscreen" role="document">
+      <div class="modal-content">
+        <!-- Botão X para fechar -->
+        <button type="button" class="close-btn" data-dismiss="modal" aria-label="Fechar">
+          &times;
+        </button>
         <div class="modal-body p-0">
-          <video id="videoPlayer3" width="100%" height="400" controls autoplay>
+          <video id="videoPlayer3" width="100%" height="100%" controls autoplay>
             <source src="assets/videos/sanitario.mp4" type="video/mp4">
             Seu navegador não suporta o elemento de vídeo.
           </video>
@@ -644,7 +692,7 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   
   <script>
-    // Ao fechar qualquer modal, pausa o vídeo e reinicia (tempo = 0) para interromper o som
+    // Ao fechar qualquer modal, pausa o vídeo e reinicia para interromper o som
     $('.modal').on('hidden.bs.modal', function () {
       var video = $(this).find('video').get(0);
       if (video) {
@@ -1070,7 +1118,6 @@ $('.modal').on('show.bs.modal', function () {
 
     
 <!--VÍDEOS-->
-
 
 
 
