@@ -560,40 +560,100 @@
 </div>
 
 
+<!-- Cards -->
 <div class="container my-5">
     <div class="row">
-        <!-- Card 1 -->
-        <div class="col-md-4">
-            <div class="card">
-                <img src="/assets/videos/esgoto.png" class="card-img-top" alt="Video 1" data-toggle="modal" data-target="#videoModal1">
-                <div class="card-body">
-                    <h5 class="card-title">Desentupimento de esgoto</h5>
-                    <p class="card-text">Serviço especializado em desentupimento de esgoto, garantindo fluxo eficiente e eliminando obstruções de forma rápida e segura.</p>
-                </div>
-            </div>
+      <!-- Card 1 -->
+      <div class="col-md-4">
+        <div class="card">
+          <img src="assets/videos/esgoto.png" class="card-img-top" alt="Video 1" data-toggle="modal" data-target="#videoModal1">
+          <div class="card-body">
+            <h5 class="card-title">Desentupimento de esgoto</h5>
+            <p class="card-text">Serviço especializado em desentupimento de esgoto, garantindo fluxo eficiente e eliminando obstruções de forma rápida e segura.</p>
+          </div>
         </div>
-        <!-- Card 2 -->
-        <div class="col-md-4">
-            <div class="card">
-                <img src="/assets/videos/tanque.png" class="card-img-top" alt="Video 2" data-toggle="modal" data-target="#videoModal2">
-                <div class="card-body">
-                    <h5 class="card-title">Limpeza de tanque</h5>
-                    <p class="card-text">
-                        Limpeza profissional de tanques, removendo resíduos acumulados e garantindo a preservação da qualidade e segurança do armazenamento.</p>
-                </div>
-            </div>
+      </div>
+      <!-- Card 2 -->
+      <div class="col-md-4">
+        <div class="card">
+          <img src="assets/videos/tanque.png" class="card-img-top" alt="Video 2" data-toggle="modal" data-target="#videoModal2">
+          <div class="card-body">
+            <h5 class="card-title">Limpeza de tanque</h5>
+            <p class="card-text">Limpeza profissional de tanques, removendo resíduos acumulados e garantindo a preservação da qualidade e segurança do armazenamento.</p>
+          </div>
         </div>
-        <!-- Card 3 -->
-        <div class="col-md-4">
-            <div class="card">
-                <img src="/assets/videos/sanitario.png" class="card-img-top" alt="Video 3" data-toggle="modal" data-target="#videoModal3">
-                <div class="card-body">
-                    <h5 class="card-title">Limpeza de Pisos</h5>
-                    <p class="card-text">Limpeza profissional de pisos no geral, restaurando o brilho e eliminando sujeiras profundas para um ambiente impecável.<br><br></p>
-                </div>
-            </div>
+      </div>
+      <!-- Card 3 -->
+      <div class="col-md-4">
+        <div class="card">
+          <img src="assets/videos/sanitario.png" class="card-img-top" alt="Video 3" data-toggle="modal" data-target="#videoModal3">
+          <div class="card-body">
+            <h5 class="card-title">Limpeza de Pisos</h5>
+            <p class="card-text">Limpeza profissional de pisos no geral, restaurando o brilho e eliminando sujeiras profundas para um ambiente impecável.</p>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
+  
+  <!-- Modal 1 -->
+  <div class="modal fade" id="videoModal1" tabindex="-1" role="dialog" aria-labelledby="videoModalLabel1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-video" role="document">
+      <div class="modal-content" style="background: transparent; border: none;">
+        <div class="modal-body p-0">
+          <video id="videoPlayer1" width="100%" height="400" controls autoplay>
+            <source src="assets/videos/01a.mp4" type="video/mp4">
+            Seu navegador não suporta o elemento de vídeo.
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Modal 2 -->
+  <div class="modal fade" id="videoModal2" tabindex="-1" role="dialog" aria-labelledby="videoModalLabel2" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-video" role="document">
+      <div class="modal-content" style="background: transparent; border: none;">
+        <div class="modal-body p-0">
+          <video id="videoPlayer2" width="100%" height="400" controls autoplay>
+            <source src="assets/videos/tanque.mp4" type="video/mp4">
+            Seu navegador não suporta o elemento de vídeo.
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Modal 3 -->
+  <div class="modal fade" id="videoModal3" tabindex="-1" role="dialog" aria-labelledby="videoModalLabel3" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-video" role="document">
+      <div class="modal-content" style="background: transparent; border: none;">
+        <div class="modal-body p-0">
+          <video id="videoPlayer3" width="100%" height="400" controls autoplay>
+            <source src="assets/videos/sanitario.mp4" type="video/mp4">
+            Seu navegador não suporta o elemento de vídeo.
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Scripts necessários -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  
+  <script>
+    // Ao fechar qualquer modal, pausa o vídeo e reinicia (tempo = 0) para interromper o som
+    $('.modal').on('hidden.bs.modal', function () {
+      var video = $(this).find('video').get(0);
+      if (video) {
+        video.pause();
+        video.currentTime = 0;
+      }
+    });
+  </script>
+    
 <!--
     <div class="row mt-4">
        Card 4 
@@ -630,14 +690,30 @@
 </div> -->
 <!-- Modal 1 -->
 <div class="modal fade" id="videoModal1" tabindex="-1" role="dialog" aria-labelledby="videoModalLabel1" aria-hidden="true">
-    <div class="modal-dialog modal-video" role="document">
-        <div class="modal-content">
-            <div class="modal-body">
-                <iframe width="100%" height="400px" src="/assets/videos/01a.mp4" frameborder="0" allow="autoplay; muted" muted></iframe>
-            </div>
+    <div class="modal-dialog modal-video modal-dialog-centered" role="document">
+      <!-- Aplicamos fundo transparente e removemos bordas do modal -->
+      <div class="modal-content" style="background: transparent; border: none;">
+        <div class="modal-body p-0">
+          <iframe id="videoIframe1" width="100%" height="400px" src="/assets/videos/01a.mp4" frameborder="0" allow="autoplay" allowfullscreen></iframe>
         </div>
+      </div>
     </div>
-</div>
+  </div>
+  
+  <!-- Scripts do Bootstrap e jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  
+  <script>
+    // Ao fechar o modal, reinicia o src do iframe para interromper o vídeo (e o som)
+    $('#videoModal1').on('hidden.bs.modal', function () {
+        var $iframe = $(this).find('iframe');
+        var src = $iframe.attr('src');
+        $iframe.attr('src', '');  // Remove o src para interromper o vídeo
+        $iframe.attr('src', src); // Restaura o src para que o vídeo seja carregado novamente, se o modal for reaberto
+    });
+  </script>
 
 <!-- Modal 2 
 <div class="modal fade" id="videoModal2" tabindex="-1" role="dialog" aria-labelledby="videoModalLabel2" aria-hidden="true">
@@ -994,6 +1070,8 @@ $('.modal').on('show.bs.modal', function () {
 
     
 <!--VÍDEOS-->
+
+
 
 
 

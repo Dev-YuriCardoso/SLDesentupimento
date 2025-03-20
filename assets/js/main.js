@@ -237,3 +237,45 @@
 
 
 })(jQuery);
+
+
+document.addEventListener('DOMContentLoaded', function() {
+      const modal = document.getElementById('videoModal');
+      const videoPlayer = document.getElementById('videoPlayer');
+      const closeBtn = document.querySelector('.close');
+      const cardImages = document.querySelectorAll('.card-img');
+
+      // Ao clicar na imagem do card, exibe o modal com o vídeo correspondente
+      cardImages.forEach(function(img) {
+        img.addEventListener('click', function() {
+          const videoSrc = this.getAttribute('data-video-src');
+          const source = videoPlayer.querySelector('source');
+          // Atualiza o source do vídeo, se for diferente do atual
+          if (source.getAttribute('src') !== videoSrc) {
+            source.setAttribute('src', videoSrc);
+            videoPlayer.load();
+          }
+          modal.style.display = 'block';
+          // Tenta reproduzir o vídeo (o clique do usuário geralmente permite o autoplay com som)
+          videoPlayer.play();
+        });
+      });
+
+      // Fecha o modal quando clicar no botão de fechar
+      closeBtn.addEventListener('click', function() {
+        closeModal();
+      });
+
+      // Fecha o modal quando clicar fora do conteúdo do modal
+      window.addEventListener('click', function(e) {
+        if (e.target === modal) {
+          closeModal();
+        }
+      });
+
+      // Função para pausar o vídeo e fechar o modal
+      function closeModal() {
+        videoPlayer.pause();
+        modal.style.display = 'none';
+      }
+    });
