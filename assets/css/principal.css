@@ -1,0 +1,100 @@
+
+
+.heading-video{
+    color:#444;
+    font-size:40px;
+    text-align: center;
+    padding: 10px;
+}
+
+.container-video{
+    display: grid;
+    grid-template-columns:2fr 1fr ;
+    gap:15px;
+    align-items: flex-start;
+    padding: 5px 5%;
+}
+
+.container-video .main-video{
+    background-color: #fff;
+    border-radius:5px ;
+    padding: 10px;
+}
+
+.container .main-video{
+    background: #fff;
+    border-radius:5px;
+    padding: 10px;
+}
+
+.container-video .mains-video video{
+    width: 100%;
+    border-radius: 5px;
+}
+.container-video .mains-video title{
+    color: #333;
+    font-size: 23px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+
+}
+.container-video .video-list{
+    background: #fff;
+    border-radius: 5px;
+    height: 520px;
+    overflow-y: scroll;
+
+}
+
+.container-video .video-list::-webkit-scrollbar{
+    width: 7px;
+}
+
+.container-video .video-list::-webkit-scrollbar-track{
+    background: #666;
+    boder-radius:50px
+}
+
+.container-video .video-list .vid video{
+    width: 100px;
+    border-radius: 5px;
+
+}
+.container-video .video-list .vid{
+    display: flex;
+    align-items: center ;
+    background: #f7f7f7;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid rgba(0, 0, 0, .1);
+    cursor: pointer;
+} 
+
+
+
+
+
+
+
+
+
+
+
+ /* Estilo para centralizar o modal */
+ .modal-video {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20rem;
+}
+/* Tamanho do vídeo no modal */
+.modal-dialog {
+    max-width: 800px;
+    width: 100%;
+}
+/* Mover o vídeo para baixo */
+.modal-body {
+    margin-top: 0rem;
+}
