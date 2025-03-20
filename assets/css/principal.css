@@ -110,7 +110,9 @@
   }
 
   @media (max-width: 768px) {
-    #slider-image {
+    #slider-images {
         background: #000000 !important;
     }
 }
+
+
